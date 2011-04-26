@@ -16,7 +16,7 @@
           disabled = false;
       
       if (input.type !== 'radio') {
-        throw new TypeError("customRadio only works on radio elements");
+        return;
       }
       
       self.control = control;
