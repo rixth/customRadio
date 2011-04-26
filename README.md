@@ -1,12 +1,10 @@
 # jquery.customRadio
 
-A simple jQuery UI widget to pretty up radio elements. There is a full suite of unit tests available in test/, written with Jasmine. You can see an example and run the tests on the [plugin's website](http://rixth.github.com/customRadio/).
+A simple jQuery UI widget to pretty up radio elements. There is a suite of unit tests available in test/, written with Jasmine. You can see an example and run the tests on the [plugin's website](http://rixth.github.com/customRadio/).
 
 Since it works by manipulating and reading the events right off your native radio inputs, it fully respects tabbing and keyboard navigation/selection of items. This also means you can call the standard jQuery val methods, bind to the change event, etc right on the native element.
 
 It also respects the disabled attribute and works with labels.
-
-All the display is powered by CSS, check out src/jquery.customRadio.css for ideas, and then customize to your heart's content.
 
 ## HTML structure required
 
@@ -18,6 +16,14 @@ And then...
 
     $('input[type=radio]').customRadio();
 
+## CSS classes
+
+All the display is powered by CSS, check out src/jquery.customRadio.css for ideas, and then customize to your heart's content. Here are the four classes you need to implement:
+
+* ui-radioButton *(default state)*
+* ui-radioButton-checked
+* ui-radioButton-focus
+* ui-radioButton-disabled
 
 ## Methods
 
