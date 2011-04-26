@@ -11,6 +11,9 @@
   -webkit-border-radius: 6px;
   background: #aaa;
   vertical-align: -1px;
+  zoom: 1;
+  *display: inline;
+  *vertical-align: 2px;
 }
 
 .ui-radioButton-checked {
