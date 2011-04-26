@@ -7,9 +7,19 @@
   height: 12px;
   width: 12px;
   border-radius: 6px;
+  background: #aaa;
+  vertical-align: -1px;
+}
+
+.ui-radioButton-checked {
+  background: #690;
+}
+
+.ui-radioButton-disabled {
   background: #ccc;
 }
 
-.ui-radioButton.checked {
-  background: red;
+.ui-radioButton-focus {
+  background: #690;
+  opacity: 0.75;
 }

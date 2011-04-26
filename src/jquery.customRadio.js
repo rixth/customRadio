@@ -15,6 +15,10 @@
           control = $('<div class="ui-radioButton"></div>').attr('data-radioSet', input.name),
           disabled = false;
       
+      if (input.type !== 'radio') {
+        throw new TypeError("customRadio only works on radio elements");
+      }
+      
       self.control = control;
       self.originalCss = {
         position: self.element.css('position'),

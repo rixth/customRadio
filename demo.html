@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>jquery.customRadio</title>
-  <link rel="stylesheet" href="src/jquery.customSelect.css" />
+  <link rel="stylesheet" href="src/jquery.customRadio.css" />
   <style type="text/css">
     body {
       font-family: "Helvetica Neue", "Lucida Grande", "Arial";
@@ -13,9 +13,10 @@
       color: #555;
       font-size: 12px;
       -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+      line-height: 17px;
     }
     .container {
-      width: 200px;
+      width: 300px;
       padding: 20px;
       margin: 20px;
       float: left;
@@ -27,22 +28,39 @@
 <body>
   
   <div class="container">
-    <h2>A bunch of radio buttons</h2>
+    <h2>A simple form</h2>
     
-    <p>
-      <input type="radio" name="gender" value="male"> Male<br>
-      <input type="radio" name="gender" value="female"> Female<br>
-      <input type="radio" name="gender" value="undisclosed"> Undisclosed<br>
-    </p>
-    
-    <div class="ui-radioButton"></div>
-    <div class="ui-radioButton checked"></div>
+    <form>
+      <p>
+        <label for="textfield">Your name</label><br>
+        <input type="text" id="textfield" name="name">
+      </p>
+      <p>
+        <input type="radio" name="gender" value="male" id="gender_male"> <label for="gender_male">Male</label><br>
+        <input type="radio" name="gender" value="female" id="gender_female"> <label for="gender_female">Female</label><br>
+        <input type="radio" name="gender" value="undisclosed" id="gender_undis"> <label for="gender_undis">Undisclosed</label><br>
+        <input type="radio" name="gender" disabled value="disabled" id="gender_disabled"> <label for="gender_disabled">Disabled</label><br>
+      </p>
+      <p>
+        <label for="textfield-age">Your age</label><br>
+        <input type="text" id="textfield-age" name="age">
+      </p>
+      <p>
+        <input type="submit" value="Submit">
+      </p>
+    </form>
   </div>
   
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
   <script src="src/jquery.customRadio.js"></script>  
   <script>
+    $('input[type=radio]').customRadio();
+    
+    $('form').submit(function () {
+      $('.container').append('<p>' + $('form').serialize() + '</p>');
+      return false;
+    });
   </script>
 </body>
 </html>
