@@ -26,8 +26,8 @@
       }
       
       self.element.after(control).css({
-        // position: 'absolute',
-        // left: -90000
+        position: 'absolute',
+        left: -90000
       });
 
       control.click(function () {
@@ -41,8 +41,11 @@
         disabled = (event.type === 'customradiodisabled');
         control.toggleClass(disabledClass, disabled);
       }).bind('focus blur', function (event) {
-        control.toggleClass('ui-radioButton-focus', event.type === 'focus')
-      })
+        control.toggleClass('ui-radioButton-focus', event.type === 'focus');
+        if (event.type === 'focus') {
+          clearSelected(this.name);
+        }
+      });
 
       $(document).delegate("input[name='" + input.name + "']", 'change blur', function (event) {
         var target = event.target;
@@ -67,8 +70,11 @@
     }
   });
 
+  function clearSelected(name) {
+    $(".ui-radioButton[data-radioSet='" + name + "']").removeClass(checkedClass);
+  }
   function checkIt() {
-    $(".ui-radioButton[data-radioSet='" + $(this).data('radioSet') + "']").removeClass(checkedClass);
+    clearSelected($(this).data('radioSet'));
     $(this).addClass(checkedClass);
   }
 }(jQuery));
