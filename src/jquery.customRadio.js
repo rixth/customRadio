@@ -42,7 +42,9 @@
         control.toggleClass(disabledClass, disabled);
       }).bind('focus blur', function (event) {
         control.toggleClass('ui-radioButton-focus', event.type === 'focus');
-        if (event.type === 'focus') {
+        // Don't do this in IE, it's a little usability gaff
+        // for keyboard navigation, but it's better overall.
+        if (event.type === 'focus' && !$.browser.msie) {
           clearSelected(this.name);
         }
       });
