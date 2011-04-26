@@ -40,26 +40,44 @@
     
     <pre>$('input[type=radio]').customRadio();</pre>
     
-    <h2 style="margin-bottom: 0">Example</h2>
-    
+    <h2 style="margin-bottom: 0">Examples</h2>
+
     <form>
-      <p>
-        <label for="textfield">Your name</label><br>
-        <input type="text" id="textfield" name="name">
-      </p>
-      <p>
+      <div class="custom square example-container">
+        <h2>Square</h2>
         <input type="radio" name="gender" value="male" id="gender_male"> <label for="gender_male">Male</label><br>
         <input type="radio" name="gender" value="female" id="gender_female"> <label for="gender_female">Female</label><br>
         <input type="radio" name="gender" value="undisclosed" id="gender_undis"> <label for="gender_undis">Undisclosed</label><br>
         <input type="radio" name="gender" disabled value="disabled" id="gender_disabled"> <label for="gender_disabled">Disabled</label><br>
-      </p>
-      <p>
-        <label for="textfield-age">Your age</label><br>
-        <input type="text" id="textfield-age" name="age">
-      </p>
-      <p>
-        <input type="submit" value="Submit">
-      </p>
+      </div>
+
+      <div class="custom example-container">
+        <h2>Round</h2>
+        <input type="radio" name="species" value="human" id="species_h"> <label for="species_h">Human</label><br>
+        <input type="radio" name="species" value="lion" id="species_l"> <label for="species_l">Lion</label><br>
+        <input type="radio" name="species" value="honey badger" id="species_ho"> <label for="species_ho">Honey badger</label><br>
+        <input type="radio" name="species" disabled value="cyborg" id="species_c"> <label for="species_c">Cyborg</label><br>
+      </div>
+
+      <div class="image custom example-container">
+        <h2>Image</h2>
+        <input type="radio" name="genre" value="rock" id="genre_rock"> <label for="genre_rock">Rock</label><br>
+        <input type="radio" name="genre" value="punk" id="genre_punk"> <label for="genre_punk">Punk</label><br>
+        <input type="radio" name="genre" value="pop" id="genre_pop"> <label for="genre_pop">Pop</label><br>
+        <input type="radio" name="genre" disabled value="opera" id="genre_opera"> <label for="genre_opera">Opera</label><br>
+      </div>
+
+      <div class="example-container">
+        <h2>Native</h2>
+        <input type="radio" name="colour" value="red" id="colour_red"> <label for="colour_red">Red</label><br>
+        <input type="radio" name="colour" value="green" id="colour_green"> <label for="colour_green">Green</label><br>
+        <input type="radio" name="colour" value="blue" id="colour_blue"> <label for="colour_blue">Blue</label><br>
+        <input type="radio" name="colour" disabled value="disabled" id="colour_disabled"> <label for="colour_disabled">Disabled</label><br>
+      </div>
+      
+      <div style="text-align:center;clear:both">
+        <input type="submit" value="Show values">
+      </div>
     </form>
     
     <pre id="debug_log">Hit submit to see form values...<br></pre>
@@ -91,10 +109,10 @@
         $('#debug_log').append(what + "<br>");
       }
       
-      $('input[type=radio]').customRadio();
+      $('.custom input[type=radio]').customRadio();
 
       $('form').submit(function () {
-        debug($('form').serialize());
+        debug($('form').serialize() || 'Please select some options');
         return false;
       });
     });

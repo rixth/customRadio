@@ -35,12 +35,10 @@ a {
 
 form {
   font-size: 14px;
-  float: left;
-  width: 200px;
+  line-height: 18px;
 }
 #debug_log {
-  float: left;
-  width: 500px;
+  clear: both;
 }
 
 .download {
@@ -58,4 +56,31 @@ pre {
   padding-top:10px;
   font-style: italic;
   color: #888;
+}
+
+.example-container {
+  width: 172px;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+
+.square .ui-radioButton {
+  border-radius: 0;
+}
+
+.image .ui-radioButton {
+  background: url(http://p.yusukekamiyamane.com/icons/search/fugue/icons/cross-circle.png);
+  height: 16px;
+  width: 16px;
+  vertical-align: -3px;
+}
+
+.image .ui-radioButton-checked {
+  background: url(http://p.yusukekamiyamane.com/icons/search/fugue/icons/tick-circle.png);
+}
+
+.image .ui-radioButton-disabled {
+  background: url(http://p.yusukekamiyamane.com/icons/search/fugue/icons/json.png);
 }
