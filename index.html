@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>customRadio by rixth @ GitHub</title>
+  <link rel="stylesheet" href="style.css" />  
+  <link rel="stylesheet" href="src/jquery.customRadio.css" />  
+</head>
+
+<body>
+  <a href="http://github.com/rixth/customRadio">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" />
+  </a>
+
+  <div id="container">
+    <div class="download">
+      <a href="http://github.com/rixth/customRadio/zipball/master">
+        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png">
+      </a>
+      <a href="http://github.com/rixth/customRadio/tarball/master">
+        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png">
+      </a>
+    </div>
+
+    <h1>
+      <a href="http://github.com/rixth/customRadio">customRadio</a>
+    </h1>
+    
+    <p>
+      A simple <a href="http://jqueryui.com">jQuery UI</a> widget to pretty up &lt;input type="radio"&gt; elements. It's fully unit tested using Jasmine and you can <a href="test/">run the tests</a> if you like.
+    </p>
+
+    <p>
+      It works by manipulating and reading the events right off your native radio inputs, it fully respects tabbing and keyboard navigation/selection of items. This also means you can call the standard jQuery val methods, bind to the change event, etc right on the native element. You can read a little more in the <a href="https://github.com/rixth/customRadio">documentation</a>.
+    </p>
+    
+    <pre>$('input[type=radio]').customRadio();</pre>
+    
+    <h2 style="margin-bottom: 0">Example</h2>
+    
+    <form>
+      <p>
+        <label for="textfield">Your name</label><br>
+        <input type="text" id="textfield" name="name">
+      </p>
+      <p>
+        <input type="radio" name="gender" value="male" id="gender_male"> <label for="gender_male">Male</label><br>
+        <input type="radio" name="gender" value="female" id="gender_female"> <label for="gender_female">Female</label><br>
+        <input type="radio" name="gender" value="undisclosed" id="gender_undis"> <label for="gender_undis">Undisclosed</label><br>
+        <input type="radio" name="gender" disabled value="disabled" id="gender_disabled"> <label for="gender_disabled">Disabled</label><br>
+      </p>
+      <p>
+        <label for="textfield-age">Your age</label><br>
+        <input type="text" id="textfield-age" name="age">
+      </p>
+      <p>
+        <input type="submit" value="Submit">
+      </p>
+    </form>
+    
+    <pre id="debug_log">Hit submit to see form values...<br></pre>
+    
+    <h2 style="clear:both;padding-top:10px;">Download</h2>
+    
+    <p>
+      You can download this project in either
+      <a href="http://github.com/rixth/customRadio/zipball/master">zip</a> or
+      <a href="http://github.com/rixth/customRadio/tarball/master">tar</a> formats.
+    </p>
+    <p>
+      You can also clone the project with <a href="http://git-scm.com">Git</a> by running:
+      <pre>$ git clone git://github.com/rixth/customRadio</pre>
+    </p>
+
+    <div class="footer">
+      get the source code on GitHub : <a href="http://github.com/rixth/customRadio">rixth/customRadio</a>
+    </div>
+  </div>
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
+  <script src="src/jquery.customRadio.js"></script>
+  
+  <script>
+    $(document).ready(function () {
+      function debug(what) {
+        $('#debug_log').append(what + "<br>");
+      }
+      
+      $('input[type=radio]').customRadio();
+
+      $('form').submit(function () {
+        debug($('form').serialize());
+        return false;
+      });
+    });
+  </script>
+  
+  <script>
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-22065584-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+</body>
+</html>
