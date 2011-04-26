@@ -1,0 +1,15 @@
+/*! customRadio: a jQuery UI widget to pretty up radio inputs
+    http://github.com/rixth/customRadio
+*/
+
+.ui-radioButton {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  border-radius: 6px;
+  background: #ccc;
+}
+
+.ui-radioButton.checked {
+  background: red;
+}
